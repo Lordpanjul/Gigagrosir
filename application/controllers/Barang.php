@@ -16,7 +16,7 @@ class Barang extends CI_Controller
 	public function index()
 	{
 		$data = array(
-			'title' => 'Kue',
+			'title' => 'Barang',
 			'barang' => $this->m_barang->get_all_data(),
 			'isi' => 'barang/v_barang',
 		);
@@ -159,7 +159,7 @@ class Barang extends CI_Controller
 		}
 
 		$data = array(
-			'title' => 'Edit Kue',
+			'title' => 'Edit Barang',
 			'kategori' => $this->m_kategori->get_all_data(),
 			'barang'  => $this->m_barang->get_data($id_barang),
 			'isi' => 'barang/v_edit',

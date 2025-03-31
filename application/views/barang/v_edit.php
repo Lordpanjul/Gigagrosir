@@ -2,7 +2,7 @@
 	<!-- general form elements disabled -->
 	<div class="card card-primary">
 		<div class="card-header">
-			<h3 class="card-title">Form Edit Kue</h3>
+			<h3 class="card-title">Form Edit Barang</h3>
 		</div>
 		<!-- /.card-header -->
 		<div class="card-body">
@@ -20,7 +20,7 @@
 
 			echo form_open_multipart('barang/edit/' . $barang->id_barang) ?>
 			<div class="form-group">
-				<label>Nama Kue</label>
+				<label>Nama Barang</label>
 				<input name="nama_barang" class="form-control" placeholder="Nama Barang" value="<?= $barang->nama_barang  ?>">
 			</div>
 			<div class="row">

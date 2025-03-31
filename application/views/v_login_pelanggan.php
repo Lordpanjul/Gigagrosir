@@ -59,8 +59,8 @@
 					</div>
 					<?php echo form_close() ?>
 
-
 					<a href="<?= base_url('pelanggan/register') ?>" class="text-center">Belum Punya Akun...!</a>
+					
 				</div>
 				<!-- /.form-box -->
 			</div>

@@ -2,7 +2,7 @@
 	<!-- general form elements disabled -->
 	<div class="card card-primary">
 		<div class="card-header">
-			<h3 class="card-title">Form Add Kue</h3>
+			<h3 class="card-title">Form Add Barang</h3>
 		</div>
 		<!-- /.card-header -->
 		<div class="card-body">
@@ -20,8 +20,8 @@
 
 			echo form_open_multipart('barang/add') ?>
 			<div class="form-group">
-				<label>Nama Kue</label>
-				<input name="nama_barang" class="form-control" placeholder="Nama Kue" value="<?= set_value('nama_barang') ?>">
+				<label>Nama Barang</label>
+				<input name="nama_barang" class="form-control" placeholder="Nama Barang" value="<?= set_value('nama_barang') ?>">
 			</div>
 			<div class="row">
 				<div class="col-sm-4">
@@ -38,7 +38,7 @@
 				<div class="col-sm-4">
 					<div class="form-group">
 						<label>Harga</label>
-						<input name="harga" class="form-control" placeholder="Harga Kue (200000)" value="<?= set_value('harga') ?>">
+						<input type="number" name="harga" class="form-control" placeholder="Harga Barang" value="<?= set_value('harga') ?>">
 					</div>
 				</div>
 				<div class="col-sm-4">
@@ -50,7 +50,7 @@
 			</div>
 
 			<div class="form-group">
-				<label>Deskripsi Kue</label>
+				<label>Deskripsi Barang</label>
 				<textarea name="deskripsi" class="form-control" rows="5" placeholder="Deskripsi.."><?= set_value('deskripsi') ?></textarea>
 			</div>
 			<div class="row">

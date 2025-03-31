@@ -1,7 +1,7 @@
 <div class="col-md-12">
 	<div class="card">
 		<div class="card-header">
-			<h3 class="card-title">Data Kue</h3>
+			<h3 class="card-title">Data Barang</h3>
 
 			<div class="card-tools">
 				<a href="<?= base_url('barang/add') ?>" type="button" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add</a>
@@ -25,7 +25,7 @@
 				<thead class="text-center">
 					<tr>
 						<th>No</th>
-						<th>Nama Kue</th>
+						<th>Nama Barang</th>
 						<th>Kategori</th>
 						<th>Harga</th>
 						<th>Gambar</th>

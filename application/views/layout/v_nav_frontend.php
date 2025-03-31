@@ -50,14 +50,19 @@
 			<!-- Messages Dropdown Menu -->
 			
 				<?php if ($this->session->userdata('email') == "") { ?>
-					<a class="nav-link" href="<?= base_url('pelanggan/login') ?>">
-						<span class="brand-text font-weight-light text-white">Pelanggan</span>
-						
+				<li class="nav-item dropdown">
+					<a class="nav-link text-white" data-toggle="dropdown" href="">
+					<span class="brand-text font-weight-light text-white">Login/Registrasi</span>
 					</a>
-					<a class="nav-link" href="<?= base_url('auth/login_user') ?>">
-						<span class="brand-text font-weight-light text-white">Admin</span>
-						
-					</a>
+				<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+						<a href="<?= base_url('auth/login_user') ?>" class="dropdown-item">
+							<p>Admin</p>
+						</a>
+						<a href="<?= base_url('pelanggan/login') ?>" class="dropdown-item">
+							<p>Pelanggan</p>
+						</a>
+				</div>
+			</li>
 
 				<?php } else { ?>
 					<a class="nav-link" data-toggle="dropdown" href="#">
