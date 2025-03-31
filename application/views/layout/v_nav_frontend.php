@@ -66,7 +66,7 @@
 
 				<?php } else { ?>
 					<a class="nav-link" data-toggle="dropdown" href="#">
-						<span class="brand-text font-weight-light"><?= $this->session->userdata('nama_pelanggan')  ?></span>
+						<span class="brand-text font-weight-light text-white"><?= $this->session->userdata('nama_pelanggan')  ?></span>
 						<img src="<?= base_url('assets/foto/no-pic.png') ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
 					</a>
 					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
