@@ -19,7 +19,7 @@
 		<div class="inner">
 			<h3><?= $total_barang ?></h3>
 
-			<p>Total Kue</p>
+			<p>Total Produk</p>
 		</div>
 		<div class="icon">
 			<i class="fas  fa-birthday-cake"></i>

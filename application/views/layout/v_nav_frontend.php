@@ -1,12 +1,12 @@
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand-md navbar-light navbar-white bg-olive">
+<nav class="main-header navbar navbar-expand-md navbar-light navbar-white bg-navy">
 	<div class="container">
 		<a href="<?= base_url() ?>" class="navbar-brand text-white">
 			<i class="fas fa-store "></i>
 			<span class="brand-text font-weight-light text-white">
 
 			<b>
-			Echax Cake
+			GIGAGROSIR
 			</b>
 			
 			</span>
@@ -43,14 +43,19 @@
 
 
 		</div>
+					
 
-		<!-- Right navbar links -->
+					<!-- Right navbar links -->
 		<ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
 			<!-- Messages Dropdown Menu -->
-			<li class="nav-item">
+			
 				<?php if ($this->session->userdata('email') == "") { ?>
 					<a class="nav-link" href="<?= base_url('pelanggan/login') ?>">
-						<span class="brand-text font-weight-light text-white">Login/Register</span>
+						<span class="brand-text font-weight-light text-white">Pelanggan</span>
+						
+					</a>
+					<a class="nav-link" href="<?= base_url('auth/login_user') ?>">
+						<span class="brand-text font-weight-light text-white">Admin</span>
 						
 					</a>
 
@@ -72,7 +77,7 @@
 						<a href="<?= base_url('pelanggan/logout')  ?>" class="dropdown-item dropdown-footer">Log Out</a>
 					</div>
 				<?php } ?>
-			</li>
+			
 			<?php
 			$keranjang = $this->cart->contents();
 			$jml_item = 0;
@@ -151,8 +156,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>WA    : 085757063915</p>
-		<p>EMAIL : echacake@gmail.com</p>
+        <p>WA    : 085</p>
+		<p>EMAIL : panjul@gmail.com</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -161,25 +166,24 @@
   </div>
 </div>
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-	<!-- Content Header (Page header) -->
+<!--
+<div class="content-wrapper
 	<div class="content-header">
 		<div class="container">
 			<div class="row mb-2">
 				<div class="col-sm-6">
 					<h1 class="m-0 text-dark"> <?= $title ?></h1>
-				</div><!-- /.col -->
+				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-						<li class="breadcrumb-item"><a href="">Echax Cake</a></li>
+						<li class="breadcrumb-item"><a href="">GIGAGROSIR</a></li>
 						<li class="breadcrumb-item"><a href=""><?= $title ?></a></li>
 					</ol>
-				</div><!-- /.col -->
-			</div><!-- /.row -->
-		</div><!-- /.container-fluid -->
+				</div>
+			</div>
+		</div>
 	</div>
-	<!-- /.content-header -->
+	-->
 
 	<!-- Main content -->
 	<div class="content">

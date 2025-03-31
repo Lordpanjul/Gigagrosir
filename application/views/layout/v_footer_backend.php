@@ -11,7 +11,7 @@
  	<!-- To the right -->
  	
  	<!-- Default to the left -->
- 	<strong>Copyright &copy; 2022 <a href="">Echax Cake</a>.</strong> All rights reserved.
+ 	<strong>Copyright &copy; 2025 <a href="">GIGAGROSIR</a>.</strong> All rights reserved.
  </footer>
  </div>
  <!-- ./wrapper -->

@@ -4,7 +4,7 @@
 	<a href="<?= base_url('admin') ?>" class="brand-link">
 		<i class="fas fa-store"></i>
 		<span class="brand-text font-weight-light">
-		Echax Cake
+		GIGAGROSIR
 		</span>
 	</a>
 
@@ -50,7 +50,7 @@
 						echo "active";
 						} ?>">
 						<i class="nav-icon fas  fa-birthday-cake"></i>
-						<p> Kue </p>
+						<p> Barang </p>
 					</a>
 				</li>
 
@@ -59,7 +59,7 @@
 					echo "active";
 					} ?>">
 						<i class="nav-icon fas  fa-image"></i>
-						<p> Gambar Preview Kue </p>
+						<p> Gambar Barang </p>
 					</a>
 				</li>
 
