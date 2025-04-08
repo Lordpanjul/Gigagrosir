@@ -1,16 +1,11 @@
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand-md navbar-light navbar-white bg-navy">
+<nav class="main-header navbar navbar-expand-md navbar-light" style="background-color: navajowhite;">
 	<div class="container">
-		<a href="<?= base_url() ?>" class="navbar-brand text-white">
-			<i class="fas fa-store "></i>
-			<span class="brand-text font-weight-light text-white">
-
-			<b>
-			GIGAGROSIR
-			</b>
-			
-			</span>
+		<a href="<?= base_url() ?>" class="navbar-brand text-dark">
+			<i class="fas fa-store text-dark"></i>
+			<span class="brand-text font-weight-light text-dark"><b>GIGAGROSIR</b></span>
 		</a>
+
 
 		<button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -20,11 +15,11 @@
 			<!-- Left navbar links -->
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a href="<?= base_url() ?>" class="nav-link text-white">Home</a>
+					<a href="<?= base_url() ?>" class="nav-link text-dark">Home</a>
 				</li>
 				<?php $kategori =  $this->m_home->get_all_data_kategori(); ?>
 				<li class="nav-item dropdown">
-					<a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-white">Kategori</a>
+					<a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-dark">Kategori</a>
 					<ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
 						<?php foreach ($kategori as $key => $value) { ?>
 							<li><a href="<?= base_url('home/kategori/' . $value->id_kategori) ?>" class="dropdown-item"> <?= $value->nama_kategori ?></a></li>
@@ -35,7 +30,7 @@
 				</li>
 
 				<li class="nav-item">
-					<a href="#" class="nav-link text-white" data-toggle="modal" data-target="#exampleModal">Contact</a>
+					<a href="#" class="nav-link text-dark" data-toggle="modal" data-target="#exampleModal">Contact</a>
 				</li>
 
 				
@@ -52,7 +47,7 @@
 				<?php if ($this->session->userdata('email') == "") { ?>
 				<li class="nav-item dropdown">
 					<a class="nav-link text-white" data-toggle="dropdown" href="">
-					<span class="brand-text font-weight-light text-white">Login/Registrasi</span>
+					<span class="nav-brand text-dark">Login/Registrasi</span>
 					</a>
 				<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 						<a href="<?= base_url('auth/login_user') ?>" class="dropdown-item">
@@ -66,7 +61,7 @@
 
 				<?php } else { ?>
 					<a class="nav-link" data-toggle="dropdown" href="#">
-						<span class="brand-text font-weight-light text-white"><?= $this->session->userdata('nama_pelanggan')  ?></span>
+						<span class="brand-text text-dark"><?= $this->session->userdata('nama_pelanggan')  ?></span>
 						<img src="<?= base_url('assets/foto/no-pic.png') ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
 					</a>
 					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -91,7 +86,7 @@
 			}
 			?>
 			<li class="nav-item dropdown">
-				<a class="nav-link text-white" data-toggle="dropdown" href="">
+				<a class="nav-link text-dark" data-toggle="dropdown" href="">
 					<i class="fas fa-shopping-cart"></i>
 					<span class="badge badge-danger navbar-badge"><?= $jml_item ?></span>
 				</a>
