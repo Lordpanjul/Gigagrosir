@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand-md navbar-light" style="background-color: #fefae0;">
+<nav class="main-header navbar navbar-expand-md navbar-light" style="background-color: navajowhite;">
     <div class="container">
         <a href="<?= base_url() ?>" class="navbar-brand text-dark">
             <i class="fas fa-store"></i>
