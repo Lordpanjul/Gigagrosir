@@ -11,7 +11,6 @@ class Belanja extends CI_Controller
 		$this->load->model('m_transaksi');
 	}
 
-
 	public function index()
 	{
 		if (empty($this->cart->contents())) {
@@ -28,10 +27,10 @@ class Belanja extends CI_Controller
 	{
 		$redirect_page = $this->input->post('redirect_page');
 		$data = array(
-			'id'      => $this->input->post('id'),
-			'qty'     => $this->input->post('qty'),
-			'price'   => $this->input->post('price'),
-			'name'    => $this->input->post('name'),
+			'id'    => $this->input->post('id'),
+			'qty'   => $this->input->post('qty'),
+			'price' => $this->input->post('price'),
+			'name'  => $this->input->post('name'),
 		);
 		$this->cart->insert($data);
 		redirect($redirect_page, 'refresh');
@@ -67,18 +66,13 @@ class Belanja extends CI_Controller
 	public function cekout()
 	{
 		$this->pelanggan_login->proteksi_halaman();
-		$this->form_validation->set_rules('provinsi', 'Provinsi', 'required', array(
-			'required' => '%s Harus Diisi !!!'
-		));
-		$this->form_validation->set_rules('kota', 'Kota', 'required', array(
-			'required' => '%s Harus Diisi !!!'
-		));
-		$this->form_validation->set_rules('expedisi', 'Expedisi', 'required', array(
-			'required' => '%s Harus Diisi !!!'
-		));
-		$this->form_validation->set_rules('paket', 'Paket', 'required', array(
-			'required' => '%s Harus Diisi !!!'
-		));
+
+		// Form validasi untuk versi sederhana tanpa API Raja Ongkir
+		$this->form_validation->set_rules('alamat', 'Alamat', 'required');
+		$this->form_validation->set_rules('kode_pos', 'Kode POS', 'required');
+		$this->form_validation->set_rules('nama_penerima', 'Nama Penerima', 'required');
+		$this->form_validation->set_rules('hp_penerima', 'HP Penerima', 'required');
+
 		if ($this->form_validation->run() == FALSE) {
 			$data = array(
 				'title' => 'Cek Out Belanja',
@@ -86,40 +80,40 @@ class Belanja extends CI_Controller
 			);
 			$this->load->view('layout/v_wrapper_frontend', $data, FALSE);
 		} else {
-			//simpan ke tabel transaksi
+			// Data transaksi
 			$data = array(
-				'id_pelanggan' => $this->session->userdata('id_pelanggan'),
-				'no_order' => $this->input->post('no_order'),
-				'tgl_order' => date('Y-m-d'),
-				'nama_penerima' => $this->input->post('nama_penerima'),
-				'hp_penerima' => $this->input->post('hp_penerima'),
-				'provinsi' => $this->input->post('provinsi'),
-				'kota' => $this->input->post('kota'),
-				'alamat' => $this->input->post('alamat'),
-				'kode_pos' => $this->input->post('kode_pos'),
-				'expedisi' => $this->input->post('expedisi'),
-				'paket' => $this->input->post('paket'),
-				'estimasi' => $this->input->post('estimasi'),
-				'ongkir' => $this->input->post('ongkir'),
-				'berat' => $this->input->post('berat'),
-				'grand_total' => $this->input->post('grand_total'),
-				'total_bayar' => $this->input->post('total_bayar'),
-				'status_bayar' => '0',
-				'status_order' => '0',
+				'id_pelanggan'   => $this->session->userdata('id_pelanggan'),
+				'no_order'       => $this->input->post('no_order'),
+				'tgl_order'      => date('Y-m-d'),
+				'nama_penerima'  => $this->input->post('nama_penerima'),
+				'hp_penerima'    => $this->input->post('hp_penerima'),
+				'provinsi'       => '-', // tidak digunakan
+				'kota'           => '-', // tidak digunakan
+				'alamat'         => $this->input->post('alamat'),
+				'kode_pos'       => $this->input->post('kode_pos'),
+				'expedisi'       => 'Kurir Toko',
+				'paket'          => 'Reguler',
+				'estimasi'       => $this->input->post('estimasi'),
+				'ongkir'         => $this->input->post('ongkir'),
+				'berat'          => $this->input->post('berat'),
+				'grand_total'    => $this->input->post('grand_total'),
+				'total_bayar'    => $this->input->post('total_bayar'),
+				'status_bayar'   => '0',
+				'status_order'   => '0',
 			);
 			$this->m_transaksi->simpan_transaksi($data);
-			//simpan ke tabel rinci transaksi
+
+			// Simpan rincian produk
 			$i = 1;
 			foreach ($this->cart->contents() as $item) {
 				$data_rinci = array(
-					'no_order' => $this->input->post('no_order'),
+					'no_order'  => $this->input->post('no_order'),
 					'id_barang' => $item['id'],
-					'qty' => $this->input->post('qty' . $i++),
+					'qty'       => $this->input->post('qty' . $i++),
 				);
 				$this->m_transaksi->simpan_rinci_transaksi($data_rinci);
 			}
 
-			//=========================================
 			$this->session->set_flashdata('pesan', 'Pesanan Berhasil Di Proses !!!');
 			$this->cart->destroy();
 			redirect('pesanan_saya');
