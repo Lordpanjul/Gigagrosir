@@ -29,13 +29,11 @@
 	</a>
 </div>
 
-
-
 <div class="card card-solid">
 	<div class="card-body pb-0">
 		<div class="row">
 			<?php foreach ($barang as $key => $value) { ?>
-				<div class="col-sm-4">
+				<div class="col-sm-4 mb-4">
 					<?php
 					echo form_open('belanja/add');
 					echo form_hidden('id', $value->id_barang);
@@ -44,34 +42,32 @@
 					echo form_hidden('name', $value->nama_barang);
 					echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
 					?>
-					<div class="card bg-light">
+					<div class="card bg-light h-100" style="min-height: 500px;">
 						<div class="card-header text-muted border-bottom-0">
 							<h2 class="lead"><b><?= $value->nama_barang ?></b></h2>
-							<p class="text-muted text-sm"><b>Kategori : </b><?= $value->nama_kategori ?></p>
+							<p class="text-muted text-sm"><b>Kategori: </b><?= $value->nama_kategori ?></p>
 						</div>
 						<div class="card-body pt-0">
 							<div class="row">
 								<div class="col-12 text-center">
-									<img src="<?= base_url('assets/gambar/' . $value->gambar) ?>" class="img-fluid" width="250px">
+								<img src="<?= base_url('assets/gambar/' . $value->gambar) ?>" class="img-fluid" style="height: 200px; object-fit: cover; width: 100%;">
 								</div>
 							</div>
 						</div>
 						<div class="card-footer">
 							<div class="row">
-								<div class="col-sm-6">
-									<div class="text-left">
-										<h4><span class="badge bg-primary">Rp. <?= number_format($value->harga, 0) ?></span></h4>
-									</div>
+								<div class="col-sm-6 text-left">
+									<h4><span class="badge bg-primary">Rp. <?= number_format($value->harga, 0) ?></span></h4>
+									<!-- TAMPILKAN MOQ DI SINI -->
+									<p class="mt-1 mb-0"><small><span class="badge bg-warning text-dark">MOQ: <?= $value->moq ?> pcs</span></small></p>
 								</div>
-								<div class="col-sm-6">
-									<div class="text-right">
-										<a href="<?= base_url('home/detail_barang/' . $value->id_barang)  ?>" class="btn btn-sm btn-success">
-											<i class="fas fa-eye"></i>
-										</a>
-										<button type="submit" class="btn btn-sm btn-primary swalDefaultSuccess">
-											<i class="fas fa-cart-plus"> Add</i>
-										</button>
-									</div>
+								<div class="col-sm-6 text-right">
+									<a href="<?= base_url('home/detail_barang/' . $value->id_barang)  ?>" class="btn btn-sm btn-success mb-1">
+										<i class="fas fa-eye"></i>
+									</a>
+									<button type="submit" class="btn btn-sm btn-primary swalDefaultSuccess">
+										<i class="fas fa-cart-plus"> Add</i>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -79,7 +75,6 @@
 					<?php echo form_close(); ?>
 				</div>
 			<?php } ?>
-
 		</div>
 	</div>
 </div>

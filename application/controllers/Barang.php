@@ -38,6 +38,9 @@ class Barang extends CI_Controller
 		$this->form_validation->set_rules('berat', 'Berat', 'required', array(
 			'required' => '%s Harus Di isi !!!'
 		));
+		$this->form_validation->set_rules('moq', 'MOQ', 'required', array(
+			'required' => '%s Harus Di isi !!!'
+		));	
 		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required', array(
 			'required' => '%s Harus Di isi !!!'
 		));
@@ -68,6 +71,7 @@ class Barang extends CI_Controller
 					'id_kategori' => $this->input->post('id_kategori'),
 					'harga' => $this->input->post('harga'),
 					'berat' => $this->input->post('berat'),
+					'moq' => $this->input->post('moq'),
 					'deskripsi' => $this->input->post('deskripsi'),
 					'gambar'	=> $upload_data['uploads']['file_name'],
 				);
@@ -100,6 +104,9 @@ class Barang extends CI_Controller
 		$this->form_validation->set_rules('berat', 'Berat', 'required', array(
 			'required' => '%s Haris Diisi !!!'
 		));
+		$this->form_validation->set_rules('moq', 'MOQ', 'required', array(
+			'required' => '%s Harus Di isi !!!'
+		));		
 		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required', array(
 			'required' => '%s Haris Diisi !!!'
 		));
@@ -137,6 +144,7 @@ class Barang extends CI_Controller
 					'id_kategori' => $this->input->post('id_kategori'),
 					'harga' => $this->input->post('harga'),
 					'berat' => $this->input->post('berat'),
+					'moq' => $this->input->post('moq'),
 					'deskripsi' => $this->input->post('deskripsi'),
 					'gambar'	=> $upload_data['uploads']['file_name'],
 				);
@@ -151,6 +159,7 @@ class Barang extends CI_Controller
 				'id_kategori' => $this->input->post('id_kategori'),
 				'harga' => $this->input->post('harga'),
 				'berat' => $this->input->post('berat'),
+				'moq' => $this->input->post('moq'),
 				'deskripsi' => $this->input->post('deskripsi'),
 			);
 			$this->m_barang->edit($data);
